@@ -1,0 +1,9 @@
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\post.xnb
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\shaderstuff.exe
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\shaderstuff.pdb
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\obj\x86\Debug\shaderstuff.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\obj\x86\Debug\shaderstuff.exe
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\obj\x86\Debug\shaderstuff.pdb
+C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\sphere.xnb
+C:\Users\Kevin\documents\visual studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\world.xnb

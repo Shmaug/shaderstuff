@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shaderstuff", "shaderstuff\shaderstuff\shaderstuff.csproj", "{71244F6B-7CEE-4ED2-99B7-9263B1650B04}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "shaderstuffContent", "shaderstuff\shaderstuffContent\shaderstuffContent.contentproj", "{A4AED864-0BF4-4BC3-AE4D-A925E9D708B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71244F6B-7CEE-4ED2-99B7-9263B1650B04}.Debug|x86.ActiveCfg = Debug|x86
+		{71244F6B-7CEE-4ED2-99B7-9263B1650B04}.Debug|x86.Build.0 = Debug|x86
+		{71244F6B-7CEE-4ED2-99B7-9263B1650B04}.Release|x86.ActiveCfg = Release|x86
+		{71244F6B-7CEE-4ED2-99B7-9263B1650B04}.Release|x86.Build.0 = Release|x86
+		{A4AED864-0BF4-4BC3-AE4D-A925E9D708B3}.Debug|x86.ActiveCfg = Debug|x86
+		{A4AED864-0BF4-4BC3-AE4D-A925E9D708B3}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
