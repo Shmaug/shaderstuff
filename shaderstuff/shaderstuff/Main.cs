@@ -18,6 +18,8 @@ namespace shaderstuff {
         Effect worldfx;
         Model sphere;
         Texture2D pixel;
+        Texture2D grass;
+        Texture2D grassblur;
         Vector3 SunPos = new Vector3(100, 100, 100);
 
         float camAng = 0;
@@ -68,6 +70,8 @@ namespace shaderstuff {
             postfx = Content.Load<Effect>("post");
             worldfx = Content.Load<Effect>("world");
             sphere = Content.Load<Model>("sphere");
+            grass = Content.Load<Texture2D>("grass");
+            grassblur = Content.Load<Texture2D>("grassblur");
 
             pixel = new Texture2D(GraphicsDevice, 1, 1);
             pixel.SetData<Color>(new Color[] { Color.White });
@@ -118,6 +122,7 @@ namespace shaderstuff {
                     mv += Vector3.Right;
                 if (mv != Vector3.Zero)
                     mv.Normalize();
+                mv *= 10f;
                 if (ks.IsKeyDown(Keys.LeftShift))
                     mv *= 10f;
                 mv = Vector3.Transform(mv, rot);
@@ -125,9 +130,7 @@ namespace shaderstuff {
                 View = Matrix.CreateLookAt(CamPos, CamPos + rot.Forward, rot.Up);
             }
 
-            for (int i = 0; i < world.Nodes.Length; i++) {
-                world.Nodes[i].splitIfIntersect(new BoundingSphere(CamPos, 10), 8);
-            }
+            world.Node.splitIfIntersect(CamPos - world.Position, 8);
 
             if (ks.IsKeyDown(Keys.LeftAlt) && lastks.IsKeyUp(Keys.LeftAlt))
                 IsMouseVisible = !IsMouseVisible;
@@ -151,17 +154,18 @@ namespace shaderstuff {
         }
 
         void DrawScene() {
-            worldfx.Parameters["LightPos"].SetValue(SunPos);
-            worldfx.Parameters["VP"].SetValue(View * Projection);
             worldfx.Parameters["W"].SetValue(Matrix.CreateTranslation(world.Position));
             worldfx.Parameters["WIT"].SetValue(Matrix.Transpose(Matrix.Invert(Matrix.CreateTranslation(world.Position))));
+            worldfx.Parameters["tex"].SetValue(grass);
+            worldfx.Parameters["texlow"].SetValue(grassblur);
 
-            GraphicsDevice.RasterizerState = new RasterizerState() { FillMode = FillMode.WireFrame };
             world.Render(GraphicsDevice, worldfx);
-            GraphicsDevice.RasterizerState = new RasterizerState() { FillMode = FillMode.Solid };
         }
 
         protected override void Draw(GameTime gameTime) {
+            worldfx.Parameters["VP"].SetValue(View * Projection);
+            worldfx.Parameters["LightPos"].SetValue(SunPos);
+            worldfx.Parameters["CameraPos"].SetValue(CamPos);
 
             GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
@@ -171,10 +175,8 @@ namespace shaderstuff {
             GraphicsDevice.Clear(Color.Transparent);
 
             worldfx.Parameters["LightColor"].SetValue(Color.LightYellow.ToVector4());
-            worldfx.Parameters["W"].SetValue(Matrix.CreateTranslation(SunPos));
             worldfx.CurrentTechnique = worldfx.Techniques["Light"];
-            sphere.Meshes[0].MeshParts[0].Effect = worldfx;
-            sphere.Meshes[0].Draw();
+            Render(sphere, Matrix.CreateScale(10) * Matrix.CreateTranslation(SunPos));
 
             worldfx.CurrentTechnique = worldfx.Techniques["Occuld"];
             DrawScene();

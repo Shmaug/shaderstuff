@@ -7,3 +7,5 @@ C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\sha
 C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\obj\x86\Debug\shaderstuff.pdb
 C:\Users\Kevin\Documents\Visual Studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\sphere.xnb
 C:\Users\Kevin\documents\visual studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\world.xnb
+C:\Users\Kevin\documents\visual studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\grass.xnb
+C:\Users\Kevin\documents\visual studio 2012\Projects\shaderstuff\shaderstuff\shaderstuff\bin\x86\Debug\Content\grassblur.xnb
